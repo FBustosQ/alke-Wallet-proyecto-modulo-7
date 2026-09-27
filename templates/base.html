@@ -1,0 +1,128 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Django Web App{% endblock %}</title>
+    
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tu CSS simplificado -->
+    <link rel="stylesheet" href="{% static 'estilos.css' %}">
+</head>
+<body>
+
+    <!-- Header con el título del proyecto -->
+    <header class="py-3 border-bottom">
+        <div class="container">
+            <div class="contenedor">
+                <button id="toggle-dark" class="btn-oscuro" type="button">
+                <i class="fas fa-moon"></i> Modo oscuro
+                </button>
+            </div>
+            
+            <h1 class="h2 mb-0">Django Web App</h1>
+            <p class="h4 text-white">Gestor de usuarios</p>
+            
+            
+        </div>
+    </header>
+    
+    <!-- Navbar con clase navbar-custom -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container">
+            <ul class="navbar-nav ml-auto">
+                {% if user.is_authenticated %}
+                    <li class="saludo-user">
+                        <i class="fas fa-user"></i> Hola, {{ user.username }}
+                    </li>
+                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link button-nav" href="{% url 'lista_clientes' %}">
+                        <i class="fas fa-home"></i> Inicio
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link button-nav" href="{% url 'admin:index' %}">
+                        <i class="fas fa-user-shield"></i> Administrador
+                    </a>
+                </li>
+                
+                
+                {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <form method="post" action="{% url 'logout' %}" class="form-logout">
+                            {% csrf_token %}
+                            <button type="submit">
+                                <i class="fas fa-sign-out-alt"></i> Salir
+                            </button>
+                        </form>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link button-nav" href="{% url 'login' %}">
+                            <i class="fas fa-sign-in-alt"></i> Ingresar
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link button-nav" href="">
+                            <i class="fas fa-user-plus"></i> Registrarse
+                        </a>
+                    </li>
+                    
+                {% endif %}
+                
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Contenido principal -->
+    <main class="container mt-4">
+        <!-- ✅ AGREGADO: Mensajes flash -->
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        
+        {% block content %}
+        {% endblock %}
+    </main>
+    
+    <!-- Footer con clase footer-custom -->
+    <footer class="footer-custom text-white text-center py-3 mt-5">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 Departamento de Desarrollo Web de una empresa de software - Todos los derechos reservados</p>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+    <script>
+    const toggle = document.getElementById('toggle-dark');
+    const body = document.body;
+
+    // Cargar preferencia guardada
+    if (localStorage.getItem('darkMode') === 'true') {
+        body.classList.add('dark-mode');
+    }
+
+    // Toggle al hacer clic
+    toggle.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
+    });
+</script>
+</body>
+</html>

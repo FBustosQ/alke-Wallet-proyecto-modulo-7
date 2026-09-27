@@ -1,0 +1,430 @@
+/* static/estilos.css - Versión simplificada */
+
+header {
+    background-color: #4883bf;
+}
+
+/* Color del navbar */
+.navbar-custom {
+    background-color: #ed7d2a;
+}
+
+/* Color del texto en el navbar */
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+    color: white !important;
+    background-color: #ed7d2a !important;
+    border-color: #cc5b27 !important;
+    box-shadow: none !important
+}
+
+/* Color del texto al pasar el mouse */
+.navbar-custom .nav-link:hover {
+    color: gray !important;
+    background-color: white !important;
+}
+
+.footer-custom {
+    background-color: #ed7d2a;
+    color: white;
+}
+
+.button-nav {
+    border: none !important;
+    box-shadow: none !important;
+    border-bottom: none !important;
+    text-decoration: none !important;
+    border-radius: 0 !important;
+}
+
+/* Formulario de logout dentro del navbar */
+.form-logout {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 0 !important;
+}
+
+/* ✅ BOTÓN LOGOUT - Única regla que necesita */
+.form-logout button {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    color: white !important;
+    padding: 0.5rem 1rem !important;
+    font-size: 1rem;
+    font-family: inherit;
+    line-height: inherit;
+    cursor: pointer;
+    box-shadow: none !important;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.form-logout button:hover {
+    color: gray !important;
+    background-color: white !important;
+}
+
+.form-logout button:focus,
+.form-logout button:active {
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    color: white !important;
+}
+
+.form-logout button i {
+    font-size: 1rem;
+}
+
+.saludo-user {
+    color: white !important;
+    background-color: #ed7d2a !important;
+    text-align: center;
+    align-content: center;
+    font-weight: bold;
+    padding-left: 1rem;
+
+}
+
+.btn-oscuro {
+    color: gray !important;
+    background-color: white !important;
+    border: 1px solid gray !important;
+    box-shadow: none !important;
+    text-decoration: none !important;
+    border-radius: 2rem;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    font-size: 0.95rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.btn-oscuro:hover {
+    background-color: #f0f0f0 !important;
+    color: #333 !important;
+}
+     
+
+.contenedor {
+    display: flex;
+    justify-content: flex-end;   /* ← Empuja a la DERECHA */
+    align-items: center;
+    padding: 1rem;
+}
+/*--------------FIN DE BASE----------------- */
+
+/*--------------ARCHIVO LOGIN----------------*/
+
+.boton-base {
+    background-color: #4883bf ;
+    color: white;
+    border: none;
+    box-shadow: none !important;
+    border-bottom: none !important;
+    text-decoration: none !important;
+    text-align: center;
+    align-items: center;
+}
+
+.boton-base:hover {
+    color: white;
+    background-color: gray;
+    transform: none !important;
+}
+
+/* ⚠️ CAMBIO MÍNIMO: excluir el botón del logout del estilo general */
+button:not(.btn-logout):not(.btn-agregar):not(.form-logout button):not(.btn-oscuro){
+    background-color: #4883bf ;
+    color: white;
+    border: none;
+    box-shadow: none !important;
+    border-bottom: none !important;
+    text-decoration: none !important;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    align-content: center;
+    border-radius: 2rem;
+    padding: 0.5rem;
+}
+
+button:not(.btn-logout):not(.form-logout button ):not(.btn-agregar):not(.btn-oscuro):hover {
+    color: white;
+    background-color: gray;
+    transform: none !important;
+}
+
+form {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: gray;
+    padding: 2% 3%;
+    border-radius: 8px;
+}
+
+.form:focus {
+    background-color: white;
+    color: black;
+    border: groove gray;
+    caret-color: gray;
+}
+
+label {
+    text-align:left;
+    display: block;
+}
+
+.tarjeta {
+    padding: 5%;
+    text-align: left;
+    transform: none !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    border: none;
+    align-content: center;
+}
+
+.alert {
+    background-color: #4883bf;
+    color: white;
+    border: none;
+}
+
+input {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: gray;
+    padding: 1%;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.titulo {
+    padding: 1rem;
+}
+
+/*--------------ARCHIVO REGISTRO----------------*/
+
+span {
+    text-align: left;
+    color: gray;
+}
+
+li {
+    color: gray;
+    margin: 0.5rem;
+}
+
+
+
+/* ------------- crear proyecto */
+a {
+   color: white;
+   background-color: transparent;
+   text-decoration: none; 
+}
+
+a:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    color: white;
+    background-color: transparent;
+    text-decoration: none; 
+}
+
+a:hover {
+    color: white;
+    background-color: transparent;
+    text-decoration: none; 
+}
+
+.btn-enlace {
+    text-decoration: none !important;
+    color: #666;
+    padding: 0.5rem 1.5rem;
+    border: 2px solid #ddd;
+    border-radius: 2rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-enlace:hover {
+    background-color:  gray !important;
+    color:  #f0f0f0 !important;
+    text-decoration: none !important;
+}
+
+.btn-derecha {
+    margin-left: auto !important;
+}
+.form-actions {
+    display: flex !important;
+    justify-content: flex-end !important;  
+    align-items: center !important ;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+/* ------------------- agregar proyecto ------------------*/
+
+.btn-agregar {
+    background-color: #4883bf;
+    color: white;
+    border: none;
+    box-shadow: none !important;
+    border-bottom: none !important;
+    text-decoration: none !important;
+    text-align: center;
+    align-items: center;
+    width: 30%;
+    align-content: center;
+    border-radius: 2rem;
+    padding: 0.5rem;
+}
+
+.btn-agregar:hover {
+    background-color: gray !important;
+    color: white !important;
+}
+.btn-agregar:focus {
+    background-color: gray !important;
+    color:white !important; 
+}
+
+textarea {
+    width: 100%;
+}
+
+
+
+
+
+/* ]MODO OSCURO */
+/* ============================================
+   MODO OSCURO MANUAL (con clase .dark-mode en <body>)
+   ============================================ */
+
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+body.dark-mode header {
+    background-color: #2a2a2a !important;
+    border-bottom-color: #444 !important;
+}
+
+body.dark-mode header h1,
+body.dark-mode header p {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .tarjeta,
+body.dark-mode .card {
+    background-color: #2a2a2a !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .tarjeta h1,
+body.dark-mode .tarjeta h2,
+body.dark-mode .tarjeta h3,
+body.dark-mode .card h1,
+body.dark-mode .card h2,
+body.dark-mode .card h3 {
+    color: #f0f0f0 !important;
+}
+
+body.dark-mode label {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+    background-color: #333 !important;
+    color: #e0e0e0 !important;
+    border-color: #555 !important;
+}
+
+body.dark-mode input:focus,
+body.dark-mode textarea:focus {
+    background-color: #3a3a3a !important;
+    border-color: #4883bf !important;
+}
+
+body.dark-mode .btn-enlace {
+    color: #e0e0e0 !important;
+    border-color: #555 !important;
+}
+
+body.dark-mode .btn-enlace:hover {
+    background-color: #3a3a3a !important;
+    color: #fff !important;
+}
+
+body.dark-mode a {
+    color: #ffb84d !important;
+}
+
+body.dark-mode .text-muted {
+    color: #999 !important;
+}
+
+body.dark-mode hr {
+    border-color: #444 !important;
+}
+
+body.dark-mode .navbar-custom {
+    background-color: #1a1a1a !important;
+    border-bottom: 1px solid #333;
+}
+
+body.dark-mode .navbar-custom .navbar-brand,
+body.dark-mode .navbar-custom .nav-link {
+    color: #e0e0e0 !important;
+    background-color: transparent !important;
+}
+
+body.dark-mode .navbar-custom .nav-link:hover {
+    color: #4883bf !important;
+    background-color: #2a2a2a !important;
+}
+
+body.dark-mode .navbar-custom .navbar-toggler {
+    border-color: #444 !important;
+}
+
+body.dark-mode .navbar-custom .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* Botón logout en modo oscuro */
+body.dark-mode .form-logout button {
+    color: #e0e0e0 !important;
+    background: transparent !important;
+}
+
+body.dark-mode .form-logout button:hover {
+    color: #4883bf !important;
+    background-color: #2a2a2a !important;
+}
+
+/* Footer en modo oscuro */
+body.dark-mode .footer-custom {
+    background-color: #1a1a1a !important;
+    color: #e0e0e0 !important;
+    border-top: 1px solid #333;
+}
+
+body.dark-mode .saludo-user {
+    color: #e0e0e0 !important;
+    background-color: #1a1a1a !important;
+}
